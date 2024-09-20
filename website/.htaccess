@@ -1,0 +1,9 @@
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION BEGIN
+PassengerAppRoot "/home/casesgyf/caseconvertonline.org/caseconvertonline/case-convert-online"
+PassengerBaseURI "/"
+PassengerPython "/home/casesgyf/virtualenv/caseconvertonline.org/caseconvertonline/case-convert-online/3.11/bin/python"
+# DO NOT REMOVE. CLOUDLINUX PASSENGER CONFIGURATION END
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^/web
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ web/$1 [L] 
