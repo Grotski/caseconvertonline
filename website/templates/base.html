@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/logo/logo.svg') }}"/>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logo/logo.png') }}"/>
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/logo/logo.jpg') }}"/>
+    {% block description %}{% endblock %}
+    <link
+      href="{{ url_for('static', filename='bs/css/bootstrap.css') }}"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='bs/css/custom.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://{{cdn}}/prismjs@v1.x/themes/prism.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script
+      src="https://unpkg.com/htmx.org@2.0.2"
+      integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ"
+      crossorigin="anonymous"
+    ></script>
+    <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"Project","name":"Convert Case","url":"https://caseconvertonline.org/","sameAs":["https://caseconvertonline.org/"]}
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RS4BQ54DL7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-RS4BQ54DL7');
+    </script>
+    <script src="static/_js/theme.js" defer></script>
+    <script src="static/_js/copy_clear_button.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="{{ url_for('views.home') }}"
+            ><img src="https://caseconvertonline.org/static/images/logo/logo-caseconvertonline.svg" alt="CaseConvertOnline" width="160" height="50"></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarResponsive"
+            aria-controls="navbarResponsive"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav me-auto">
+            </ul>
+            <ul class="navbar-nav ms-md-auto">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle d-flex align-items-center"
+                  href="#"
+                  id="theme-menu"
+                  aria-expanded="false"
+                  data-bs-toggle="dropdown"
+                  data-bs-display="static"
+                  aria-label="Toggle theme"
+                >
+                  <i class="bi bi-circle-half"></i>
+                  <span class="d-lg-none ms-2">Toggle theme</span>
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  data-bs-propper="static"
+                >
+                  <li>
+                    <button
+                      type="button"
+                      class="dropdown-item d-flex align-items-center"
+                      data-bs-theme-value="light"
+                      aria-pressed="false"
+                    >
+                      <i class="bi bi-sun-fill"></i
+                      ><span class="ms-2">Light</span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      class="dropdown-item d-flex align-items-center"
+                      data-bs-theme-value="dark"
+                      aria-pressed="true"
+                    >
+                      <i class="bi bi-moon-stars-fill"></i
+                      ><span class="ms-2">Dark</span>
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="bs-docs-section">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+    <footer id="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+              <li>Email: team@caseconvertonline.org</li>
+          </ul>
+          <div class="social-icons">
+            <a href="//www.dmca.com/Protection/Status.aspx?ID=f6165f17-1a55-489a-bc83-7ad70940e321" title="DMCA.com Protection Status" class="dmca-badge" target="_blank" rel="noopener noreferrer">
+              <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120q.png?ID=f6165f17-1a55-489a-bc83-7ad70940e321"  alt="DMCA.com Protection Status" /></a>
+            <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"></script>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Made By</h3>
+          <div class="social-icons">
+              <a href="https://www.linkedin.com/in/mykhailo-pyrkh-691000261/" class="social-icon" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+              </svg></a>
+          </div>
+      </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

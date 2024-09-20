@@ -1,0 +1,68 @@
+<form method="PUT" id="text_form">
+  <label for="initial_text" class="form-label mt-4"></label>
+  <div class="textarea-container">
+    <textarea
+      class="form-control user-text"
+      name="initial_text"
+      id="initial_text"
+      placeholder="Type your text here.."
+      rows="15"
+      onkeyup="countChar(this)"
+    >{{ initial_text }}</textarea>
+    <button type="button" id="clearButton" class="delete">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <button id="copyButton" type="button" class="copy">
+      <span id="copyIcon" class="material-symbols-outlined">content_copy</span>
+    </button>
+  </div>
+  <br />
+  <div>
+    <button
+      type="submit"
+      name="submit_upper"
+      value="uppercase"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Upper Case
+    </button>
+    <button
+      type="submit"
+      name="submit_lower"
+      value="lowercase"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Lower Case
+    </button>
+    <button
+      type="submit"
+      name="submit_capitalize"
+      value="capitalize"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Capitalize Case
+    </button>
+    <button
+      type="submit"
+      name="submit_title"
+      value="title"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Title Case
+    </button>
+    <button
+    type="submit"
+    name="submit_sentence"
+    value="sentence"
+    class="btn btn-secondary"
+    hx-put="{{ url_for('views.home') }}"
+    >
+      Sentence Case
+    </button>
+  </div>
+</form>
+<script src="static/_js/copy_clear_button.js" defer></script>

@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% block title %}Convert Case Online | Easily Change Uppercase to Lowercase and more!{% endblock %}
+{% block description %}<meta name="description" content="Case Converter Tool 2024 – Transform text to uppercase, lowercase, title case, sentence case, capitalize case  in one click with our free online converter">{% endblock %}
+{% block content%}
+<div class="page-header" id="banner">
+  <div class="row">
+    <h1>Online Case Converter</h1>
+  </div>
+  <div>
+      <p>
+          Case converter is a convenient web tool that allows you to modify the case of any text. Just copy and paste your text into the box below and select the desired case format.
+      </p>
+  </div>
+</div>
+<form class="form-label mt-4" method="PUT" id="text_form" hx-target="this" hx-swap="outrHTML">
+  <label for="initial_text" class="form-label mt-4"></label>
+  <div class="textarea-container">
+    <textarea
+      class="form-control user-text"
+      name="initial_text"
+      id="initial_text"
+      placeholder="Type your text here.."
+      rows="15"
+      onkeyup="countChar(this)"
+    ></textarea>
+    <button type="button" id="clearButton" class="delete">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <button id="copyButton" type="button" class="copy">
+      <span id="copyIcon" class="material-symbols-outlined">content_copy</span>
+    </button>
+  </div>
+  <br />
+  <div>
+    <button
+      type="submit"
+      name="submit_upper"
+      value="uppercase"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Upper Case
+    </button>
+    <button
+      type="submit"
+      name="submit_lower"
+      value="lowercase"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Lower Case
+    </button>
+    <button
+      type="submit"
+      name="submit_capitalize"
+      value="capitalize"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Capitalize Case
+    </button>
+    <button
+      type="submit"
+      name="submit_title"
+      value="title"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Title Case
+    </button>
+    <button
+      type="submit"
+      name="submit_sentence"
+      value="sentence"
+      class="btn btn-secondary"
+      hx-put="{{ url_for('views.home') }}"
+    >
+      Sentence Case
+    </button>
+  </div>
+</form>
+<div class="bs-docs-section">
+  <small>Numbers of characters: </small>
+  <span id="charNum">0</span>
+</div>
+{% endblock %}
