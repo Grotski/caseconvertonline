@@ -1,4 +1,4 @@
-from flask import render_template, send_from_directory
+from flask import render_template, send_from_directory, request
 from website import create_app
 
 
@@ -12,12 +12,12 @@ def page_not_found(error):
 
 @app.route("/robots.txt")
 def robots_txt():
-    return send_from_directory(app.static_folder, "robots.txt")
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 @app.route("/sitemap.xml")
 def sitemap_xml():
-    return send_from_directory(app.static_folder, "sitemap.xml")
+    return send_from_directory(app.static_folder, request.path[1:])
 
 
 
