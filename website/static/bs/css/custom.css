@@ -124,3 +124,11 @@ body {
     background-color: #2270e6; /* Hover background color */
 }
 
+[data-bs-theme="light"] .card {
+    background-color: #f8f9fa;
+}
+
+[data-bs-theme="light"] .card li {
+    background-color: #f8f9fa;
+    color: #62686c;
+}
